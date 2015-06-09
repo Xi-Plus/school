@@ -18,7 +18,7 @@ ini_set("display_errors", 1);
 <form action="" method="get">
 <input name="type" type="hidden" value="class">
 <?php
-$html=file_get_contents("http://w3.tngs.tn.edu.tw/departments/teach/classtable/top.asp");
+$html=@file_get_contents("http://w3.tngs.tn.edu.tw/departments/teach/classtable/top.asp");
 $html=str_replace("\r\n", "", $html);
 $html=iconv("BIG5", "UTF-8//IGNORE", $html);
 preg_match('(<select name="select1".*?<\/select>)', $html, $match);
@@ -28,7 +28,6 @@ $temp=preg_replace('/onChange=".*?"/', "", $temp);
 $temp=preg_replace('/onFocus=".*?"/', "", $temp);
 $temp=preg_replace('/name=".*?"/', 'name="sqlstr"', $temp);
 echo $temp;
-// echo $html;
 ?>
 <input name="" type="submit" value="submit">
 </form>
@@ -45,7 +44,6 @@ $temp=preg_replace('/onChange=".*?"/', "", $temp);
 $temp=preg_replace('/onFocus=".*?"/', "", $temp);
 $temp=preg_replace('/name=".*?"/', 'name="sqlstr"', $temp);
 echo $temp;
-// echo $html;
 ?>
 <input name="" type="submit" value="submit">
 </form>
@@ -72,7 +70,7 @@ echo $temp;
 <?php
 if(isset($_GET["sqlstr"])){
 	$url="http://w3.tngs.tn.edu.tw/departments/teach/classtable/down.asp?sqlstr=".urlencode($_GET["sqlstr"])."&type=".urlencode($_GET["type"]);
-	$html=file_get_contents($url);
+	$html=@file_get_contents($url);
 	$html=iconv("BIG5", "UTF-8//IGNORE", $html);
 	$html=str_replace("down.asp", "", $html);
 	$html=str_replace("images/bg.jpg", "http://w3.tngs.tn.edu.tw/departments/teach/classtable/images/bg.jpg", $html);
