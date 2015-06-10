@@ -5,6 +5,7 @@
 <body>
 <center>
 	<h2>登入TNFSH測試 (使用成績登入查詢系統)</h2>
+	<h3>Open Source: <a href="https://github.com/Xi-Plus/school/tree/master/tnfsh/login" target="_blank">On Github</a></h3>
 	<form action="" method="post">
 		帳號： <input name="id" type="text"><br>
 		密碼： <input name="pwd" type="password"><br>
