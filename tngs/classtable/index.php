@@ -1,11 +1,7 @@
 <html>
-<?php
-ini_set("display_errors", 1);
-?>
 <head>
 	<meta charset="UTF-8">
 	<title>台南女中課表查詢系統 for Google Chrome</title>
-	<!--<base href="http://w3.tngs.tn.edu.tw/departments/teach/classtable/">-->
 </head>
 <body bgColor="#ccccff" background="http://w3.tngs.tn.edu.tw/departments/teach/classtable/images/bg.jpg" marginheight="">
 <center>
@@ -88,6 +84,10 @@ if(isset($_GET["sqlstr"])){
 </script>
 <?php
 }
+?>
+<hr>
+<?php
+include("../../../function/developer.php");
 ?>
 </center>
 </body>
