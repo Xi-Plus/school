@@ -7,6 +7,9 @@
 ### class_search
 班級查詢系統
 
+### remaining_class
+剩餘課堂數計算
+
 ## tnfsh
 台南一中
 
