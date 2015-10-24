@@ -1,0 +1,41 @@
+<?php
+date_default_timezone_set("Asia/Taipei");
+$lastdate="2038-1-19";
+$classlist=array("國文","英文","數學","物理","化學","地科","生物","公民","歷史","地理","專題","生活","體育","國防","家政","音樂","美術","綜合","生涯","選修","健康");
+$classtable=array(
+	1=>array("","化學","數學","數學","體育","國文"),
+	2=>array("","英文","化學","生物","英文","數學"),
+	3=>array("","英文","選修","國文","生物","生涯"),
+	4=>array("","數學","選修","物理","生物","音樂"),
+	5=>array("","健康","體育","綜合","數學","美術"),
+	6=>array("","物理","英文","綜合","物理","化學"),
+	7=>array("","物理","生物","國文","國文","化學"),
+	8=>array("","國文","物理","化學","數學","英文")
+);
+$special=array(
+	array("2038-1-18","1","數學")
+);
+$timelist=array(
+	array("0000","Off",1,"課程未開始"),
+	array("0730","On",1,"早自修"),
+	array("0800","Finish",1),
+	array("0810","Attend",1),
+	array("0900","Finish",2),
+	array("0910","Attend",2),
+	array("1000","Finish",3),
+	array("1010","Attend",3),
+	array("1100","Finish",4),
+	array("1110","Attend",4),
+	array("1200","Other",4,"午餐及午休"),
+	array("1315","Finish",5),
+	array("1325","Attend",5),
+	array("1415","Finish",6),
+	array("1425","Attend",6),
+	array("1515","Finish",7),
+	array("1525","Attend",7),
+	array("1615","Finish",8),
+	array("1625","Attend",8),
+	array("1715","Off",9,"已放學"),
+	array("2359")
+);
+?>

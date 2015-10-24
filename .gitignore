@@ -2,3 +2,4 @@ common/class_search/config.php
 tnfsh/login/cookie.txt
 tnfsh/google_calendar_producer/input.txt
 tnfsh/google_calendar_producer/output.csv
+common/remaining_class/config.php
