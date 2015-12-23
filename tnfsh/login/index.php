@@ -12,8 +12,9 @@
 		<input name="" type="submit" value="送出">
 	</form>
 	<?php
-	include_once("func.php");
+	require_once("func.php");
 	if(isset($_POST["id"])){
+		$cookie;
 		if(checklogin($_POST["id"],$_POST["pwd"]))echo "登入成功";
 		else echo "登入失敗";
 	}
