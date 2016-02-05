@@ -1,7 +1,6 @@
 <?php
-ini_set('display_errors', 1);
 date_default_timezone_set('Asia/Taipei');
-include_once("../../../function/sql2.php");
+require("../../function/SQL-function/sql.php");
 if(!is_numeric(@$_GET['page']))@$_GET['page']=1;
 if(!is_numeric(@$_GET['school']))@$_GET['school']=0;
 ?>

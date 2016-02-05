@@ -1,5 +1,5 @@
 <?php
-require_once("../../../function/curl/curl.php");
+require_once("../../function/cURL-HTTP-function/curl.php");
 function checklogin($id,$pwd){
 	$post=array(
 		"txtID"=>$id,

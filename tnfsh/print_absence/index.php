@@ -1,5 +1,5 @@
 <?php
-require_once("../../../function/curl/curl.php");
+require_once("../../function/cURL-HTTP-function/curl.php");
 require_once("../login/func.php");
 if(isset($_POST['id'])&&isset($_POST['pwd'])&&checklogin($_POST['id'],$_POST['pwd'])){
 	?>

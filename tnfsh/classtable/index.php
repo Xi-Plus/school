@@ -1,7 +1,4 @@
 <html>
-<?php
-ini_set("display_errors", 1);
-?>
 <head>
 	<meta charset="UTF-8">
 	<title>台南一中課表查詢系統 for UTF-8</title>
