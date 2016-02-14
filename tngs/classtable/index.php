@@ -87,7 +87,7 @@ if(isset($_GET["sqlstr"])){
 ?>
 <hr>
 <?php
-include("../../../function/developer.php");
+include("../../function/Xiplus-Facebook-Badge/badge.php");
 ?>
 </center>
 </body>
