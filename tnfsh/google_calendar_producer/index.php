@@ -41,6 +41,10 @@ foreach ($text as $monthtext){
 				$startdate=$temp[2];
 				$endmonth=$temp[3];
 				$enddate=$temp[4];
+			}else if(preg_match('/(\d+?)日～(\d+?)月(\d+?)日/',$daylist,$temp)){
+				$startdate=$temp[1];
+				$endmonth=$temp[2];
+				$enddate=$temp[3];
 			}else if(preg_match('/(\d+?)～(\d+?)日/',$daylist,$temp)){
 				$startdate=$temp[1];
 				$enddate=$temp[2];
