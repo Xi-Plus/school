@@ -66,9 +66,9 @@ foreach ($text as $monthtext){
 			foreach ($daytext as $text){
 				$output.=
 					$text.",".
-					$startmonth."/".$startdate."/".getyear($startmonth).",".
+					str_pad($startmonth, 2, "0", STR_PAD_LEFT)."/".str_pad($startdate, 2, "0", STR_PAD_LEFT)."/".getyear($startmonth).",".
 					",".
-					$endmonth."/".$enddate."/".getyear($endmonth).",".
+					str_pad($endmonth, 2, "0", STR_PAD_LEFT)."/".str_pad($enddate, 2, "0", STR_PAD_LEFT)."/".getyear($endmonth).",".
 					",".
 					"True,".
 					",".
