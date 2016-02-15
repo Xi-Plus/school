@@ -21,7 +21,7 @@ $chitext=array(
 "十 月"=>"CUT month=10;",
 );
 $text=file_get_contents("input.txt");
-$text=str_replace(array("\r\n")," ",$text);
+$text=str_replace(array("\r\n","\n")," ",$text);
 foreach ($chitext as $index => $temp){
 	$text=str_replace($index,$temp,$text);
 }
@@ -49,12 +49,13 @@ foreach ($text as $monthtext){
 				$temp2=explode("、",$temp2);
 				$startdate=$temp2[0];
 				$enddate=$temp2[count($temp2)-1];
+			}else if(preg_match('/(\d+)：/',$daylist,$temp)){
+				$startdate=$temp[1];
+				$enddate=$temp[1];
 			}
 			if($startdate===false)continue;
-				consolelog($temp);
-				consolelog($startmonth."/".$startdate."/".$endmonth."/".$enddate);
 			$daylist=str_replace(":","：",$daylist);
-			preg_match('/日：(.+)/',$daylist,$temp);
+			preg_match('/：(.+)/',$daylist,$temp);
 			$daytext=$temp[1];
 			$daytext=str_replace(array(" "),"",$daytext);
 			$daytext=explode("；",$daytext);
