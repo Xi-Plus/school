@@ -1,14 +1,6 @@
 <?php
-$SET["month"]=8;
-$SET["year"]=2015;
-function getyear($month){
-	global $SET;
-	if($month>=$SET["month"])return $SET["year"];
-	else return $SET["year"]+1;
-}
+require("function.php");
 $chitext=array(
-"十 一 月"=>"CUT month=11;",
-"十 二 月"=>"CUT month=12;",
 "一 月"=>"CUT month=1;",
 "二 月"=>"CUT month=2;",
 "三 月"=>"CUT month=3;",
@@ -19,6 +11,8 @@ $chitext=array(
 "八 月"=>"CUT month=8;",
 "九 月"=>"CUT month=9;",
 "十 月"=>"CUT month=10;",
+"十 一 月"=>"CUT month=11;",
+"十 二 月"=>"CUT month=12;",
 );
 $text=file_get_contents("input.txt");
 $text=str_replace(array("\r\n","\n")," ",$text);
@@ -26,7 +20,7 @@ foreach ($chitext as $index => $temp){
 	$text=str_replace($index,$temp,$text);
 }
 $text=explode("CUT",$text);
-$output="Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location,Private\r\n";
+$output="Category,Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location,Private\r\n";
 foreach ($text as $monthtext){
 	if(preg_match("/month=(\d+);/",$monthtext,$month)){
 		$month=$month[1];
@@ -65,7 +59,7 @@ foreach ($text as $monthtext){
 			$daytext=explode("；",$daytext);
 			foreach ($daytext as $text){
 				$output.=
-					$text.",".
+					getcatgory($text).",".$text.",".
 					str_pad($startmonth, 2, "0", STR_PAD_LEFT)."/".str_pad($startdate, 2, "0", STR_PAD_LEFT)."/".getyear($startmonth).",".
 					",".
 					str_pad($endmonth, 2, "0", STR_PAD_LEFT)."/".str_pad($enddate, 2, "0", STR_PAD_LEFT)."/".getyear($endmonth).",".
