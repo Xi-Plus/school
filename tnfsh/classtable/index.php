@@ -2,6 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>台南一中課表查詢系統 for UTF-8</title>
+	<meta name=viewport content="width=600, initial-scale=1">
 </head>
 <body bgColor="#D0D0D0">
 <center>

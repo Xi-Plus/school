@@ -2,6 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>台南女中課表查詢系統 for Google Chrome</title>
+	<meta name=viewport content="width=700, initial-scale=1">
 </head>
 <body bgColor="#ccccff" background="http://w3.tngs.tn.edu.tw/departments/teach/classtable/images/bg.jpg" marginheight="">
 <center>
