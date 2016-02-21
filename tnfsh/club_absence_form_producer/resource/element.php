@@ -1,0 +1,15 @@
+<?php
+$element=array(
+	"input"=>array(
+		"radio"=>array("type","page"),
+		"checkbox"=>array("date_noon","date_1","date_2","date_3","date_4","date_5","date_meet","date_class",),
+		"text"=>array("applicant","subject","place","date_start","date_end","class_start","class_end")
+	),
+	"produce"=>array(
+		"checkbox"=>array("date_noon","date_1","date_2","date_3","date_4","date_5","date_meet","date_class",
+		),
+		"text"=>array("applicant","subject","place","year_start","month_start","date_start","year_end","month_end","date_end","class_start","class_end"
+		)
+	)
+);
+?>
