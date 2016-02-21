@@ -93,7 +93,10 @@
 			<td><input type="file" name="list" required>CSV 格式</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><input type="submit" value="產生公假單 html"></td>
+			<td colspan="2" align="center">
+				<input type="submit" formaction="produce.php?type=html" value="產生公假單 html">
+				<input type="submit" formaction="produce.php?type=doc" value="產生公假單 doc">
+			</td>
 		</tr>
 		</table>
 	</form>

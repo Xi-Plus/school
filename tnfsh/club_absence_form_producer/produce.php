@@ -1,9 +1,3 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-</head>
-<body>
-<center>
 <?php
 try {
 	if (!isset($_FILES["setting"]) || $_FILES["setting"]["error"] != 0) {
@@ -89,20 +83,26 @@ try {
 
 	$output.=file_get_contents("resource/footer.html");
 
-	file_put_contents("temp/produce.html",$output);
-	
-	/*require("function/word.php");
-	$word=new word; 
-	$word->start();
-	echo iconv("UTF-8","BIG5//IGNORE",$output);
-	$word->save("temp/produce.doc");*/
-	echo '完成!<br>';
-	echo '<a href="temp/produce.html">下載連結 .html</a><br>';
-	// echo '<a href="temp/produce.doc">下載連結 .doc</a> (可能有部分字元無法顯示)<br>';
+	if ($_GET["type"] == "html") {
+		header('Content-type:application/force-download');
+		header('Content-Transfer-Encoding: UTF-8');
+		header('Content-Disposition:attachment;filename=CAFPhtml.html');
+		echo $output;
+	} else {
+		header('Content-type:application/force-download');
+		header('Content-Transfer-Encoding: UTF-8');
+		header('Content-Disposition:attachment;filename=CAFPdoc.doc');
+		echo $output;
+	}
 } catch (Exception $e) {
-	echo $e->getMessage();
-}
 ?>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<center>
+	<?php echo $e->getMessage(); ?>
 <hr>
 <?php
 include("../../function/Xiplus-Facebook-Badge/badge.php");
@@ -110,3 +110,6 @@ include("../../function/Xiplus-Facebook-Badge/badge.php");
 </center>
 </body>
 </html>
+<?php
+}
+?>
