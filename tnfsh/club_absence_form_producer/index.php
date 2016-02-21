@@ -105,7 +105,7 @@
 	<tr>
 		<td>
 			<ul>
-				<li>CSV格式</li>
+				<li>CSV格式 <a href="list_example.php">範例下載</a></li>
 				<li>編碼為 UTF-8(檔首無BOM)</li>
 				<li>每行依序為 姓名,年級,班級,座號,活動地點</li>
 				<li>空行為強迫換行</li>
