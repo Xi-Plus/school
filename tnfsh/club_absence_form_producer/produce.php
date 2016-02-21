@@ -26,15 +26,16 @@ try {
 	if (!isset($_FILES["list"]) || $_FILES["list"]["error"] != 0) {
 		throw new Exception("名單上傳失敗");
 	}
+	$listtext=file_get_contents($_FILES["list"]["tmp_name"]);
+	$listtext=explode("\r\n", $listtext);
 	$list=array();
-	if (($handle = fopen($_FILES["list"]["tmp_name"], "r")) !== false) {
-	    while (($data = fgetcsv($handle)) !== false) {
-	    	if ($data[0] !== null) {
-	    		$list[]=$data;
-	    	}
-	    }
-	    fclose($handle);
+	foreach ($listtext as $temp) {
+		$temp=str_getcsv($temp);
+		if ($temp !== null) {
+			$list[]=$temp;
+		}
 	}
+
 	$pagelist=array(0=>array());
 	$index=0;
 	$preclass=$list[0][1]*100+$list[0][2];
@@ -43,7 +44,6 @@ try {
 		if ( ($temp[0] == "")
 			|| ($setting["page"] == "class" && $preclass != $temp[1]*100+$temp[2])
 			|| $count >= 10) {
-			$pagelist[$index]=array_pad($pagelist[$index], 10, array("","","","",""));
 			$index++;
 			$count=0;
 		} else {
@@ -52,7 +52,9 @@ try {
 			$count++;
 		}
 	}
-	$pagelist[$index]=array_pad($pagelist[$index], 10, array("","","","",""));
+	foreach ($pagelist as $key => $temp) {
+		$pagelist[$key]=array_pad($pagelist[$key], 10, array("","","","",""));
+	}
 
 	require("resource/element.php");
 	require("function/checkbox.php");
