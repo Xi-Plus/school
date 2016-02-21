@@ -7,6 +7,9 @@
 ### class_search
 班級查詢系統
 
+### club_absence_form_producer
+社團公假單產生器
+
 ### remaining_class
 剩餘課堂數計算
 
