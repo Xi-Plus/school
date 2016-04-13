@@ -40,11 +40,10 @@ try {
 			|| $count >= 10) {
 			$index++;
 			$count=0;
-		} else {
-			$pagelist[$index][]=$temp;
-			$preclass=$temp[1]*100+$temp[2];
-			$count++;
 		}
+		$pagelist[$index][]=$temp;
+		$preclass=$temp[1]*100+$temp[2];
+		$count++;
 	}
 	foreach ($pagelist as $key => $temp) {
 		$pagelist[$key]=array_pad($pagelist[$key], 10, array("","","","",""));
