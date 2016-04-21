@@ -16,9 +16,6 @@
 ## tnfsh
 台南一中
 
-### classtable
-使用UTF-8瀏覽課表
-
 ### google_calendar_producer
 將學校行事曆轉換成Google日曆格式
 #### 使用方法
@@ -32,9 +29,3 @@
 
 ### print_absence
 列印曠課
-
-## tngs
-台南女中
-
-### classtable
-使用Chrome瀏覽課表
